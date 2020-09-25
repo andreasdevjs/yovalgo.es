@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+  <!-- Basic -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>YoValgo.es</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Primary Meta Tags -->
+  <title>YOVALGO - Ayudamos a mayores de 50 años a encontrar trabajo</title>
+  <meta name="title" content="YOVALGO - Ayudamos a mayores de 50 años a encontrar trabajo">
+  <meta name="description" content="YOVALGO es un proyecto sin ánimo de lucro que ayuda a personas mayores de 50 años a encontrar un empleo. Les damos visibilidad a través de una vídeo entrevista.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yovalgo.es/">
+  <meta property="og:title" content="YOVALGO - Ayudamos a mayores de 50 años a encontrar trabajo">
+  <meta property="og:description" content="YOVALGO es un proyecto sin ánimo de lucro que ayuda a personas mayores de 50 años a encontrar un empleo. Les damos visibilidad a través de una vídeo entrevista.">
+  <meta property="og:image" content="./images/yovalgo-logo-grande.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yovalgo.es/">
+  <meta property="twitter:title" content="YOVALGO - Ayudamos a mayores de 50 años a encontrar trabajo">
+  <meta property="twitter:description" content="YOVALGO es un proyecto sin ánimo de lucro que ayuda a personas mayores de 50 años a encontrar un empleo. Les damos visibilidad a través de una vídeo entrevista.">
+  <meta property="twitter:image" content="./images/yovalgo-logo-grande.png">
+
+  <!-- Styles -->
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
+
+  <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+    emailjs.init("user_oi3nhS25jZL0Mhpc6YgxI");
+    })();
+  </script>
+
 </head>
 <body>
 
@@ -45,7 +75,7 @@
         <li class="values__item"><span class="material-icons"> check_circle </span> El empleo no muere a los 50 años</li>
         <li class="values__item"><span class="material-icons"> check_circle </span> Las personas mayores de 50 años pueden aportar mucho valor a las empresas</li>
         <li class="values__item"><span class="material-icons"> check_circle </span> Se deberían dar ayudas a las empresas para la contratación de Talento Senior</li>
-        <li class="values__item"><span class="material-icons"> check_circle </span> Decimos no a la discriminación por edad</li>
+        <li class="values__item"><span class="material-icons"> check_circle </span> Decimos NO a la discriminación por edad</li>
       </ul>
     </div>
   </section>
@@ -168,9 +198,21 @@
     <div class="modalnumber__container">
       <h2 class="modalnumber__title">Déjanos tu número y te llamamos <span class="material-icons"> call </span></h2>
       <p class="modalnumber__text">Nos pondremos en contacto contigo para concertar una cita y hacerte una video entrevista. ¡Con esto aumentarás tus oportunidades de encontrar trabajo!</p>
-      <input class="yv-input" type="text" placeholder="ej. 672 76 78 98">
+      <input id="modal-number-name" class="yv-input" type="text" placeholder="Nombre">
+      <input id="modal-number-phone" class="yv-input" type="text" placeholder="Número de teléfono">
       <div class="yv-spacer-t-10"></div>
-      <button class="yv-button">Llamadme</button>
+      <button class="yv-button" id="modal-number-send">Llamadme</button>
+    </div>
+  </div>
+
+
+  <!-- Cookie consent handmade -->
+  <div class="cookie" id="cookie-banner">
+    <div class="cookie__content">
+      <p>En esta web usamos cookies para personalizarte el contenido y tener estadísticas básicas de uso</p>
+    </div>
+    <div class="cookie__button">
+      <button class="yv-button" id="cookie-accept-button">Acepto</button>
     </div>
   </div>
 
