@@ -19,6 +19,11 @@ const openCookiebanner = () => {
 
 // Al cargar la página comprobamos el consentimiento y tomamos acción (y otras acciones)
 window.onload = function () {
+  
+  (function() {
+    emailjs.init("user_oi3nhS25jZL0Mhpc6YgxI");
+  })();
+
   const isCookieAccepted = localStorage.getItem("cookie-consent");
   if(isCookieAccepted === null) {
     setTimeout(function(){ openCookiebanner(); }, 3000);
