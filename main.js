@@ -5,7 +5,7 @@ const modalButtonSend = document.getElementById('modal-number-send');
 const modalPhoneName = document.getElementById('modal-number-name');
 const modalPhoneNumber = document.getElementById('modal-number-phone');
 
-const ctaPhoneButton = document.getElementById('cta-phone');
+const ctaPhoneButton = document.getElementById('cta-phone') || '';
 const ctaNav = document.getElementById('cta-nav');
 
 const cookieBanner = document.getElementById('cookie-banner');
@@ -48,11 +48,21 @@ modalButtonSend.onclick = function () {
       phone: modalPhoneNumber.value,
       notes: 'Alguien quiere contactar'
     };
+
+    modalButtonSend.innerText = 'Enviando..';
     
     emailjs.send('service_ux2g4f5', 'template_k2sslj6', templateParams)
     .then(function(response) {
+      
       modalPhoneNumber.value = '';
+      modalPhoneName.value = '';
       modal.style.display = "none";
+      modalButtonSend.innerText = 'Llamadme';
+      
+      setTimeout(function(){
+        alert('¡Tus datos se han enviado con éxito! Nos pondremos en contacto contigo pronto'); 
+      }, 2000);
+
     }, function(error) {
       console.log('FAILED...', error);
     });

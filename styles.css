@@ -58,6 +58,15 @@ table {
 */
 
 /* Globals */
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  body {
+    border: 1px solid whitesmoke;
+  }
+}
 .bold {
   font-weight: bold;
 }
@@ -94,10 +103,11 @@ table {
   background: blueviolet;
 }
 
+
+
 /* Nav */
 .nav {
   background: white;
-  box-shadow: 10px 1px 10px black;
 }
 .nav__wrapper {
   display: flex;
@@ -105,12 +115,17 @@ table {
   justify-content: space-between;
   align-items: center;
 }
-.nav__title {
+.nav__title a {
+  text-decoration: none;
+  color: black;
   font-weight: 700;
   font-size: 32px;
   font-family: 'Bebas Neue';
   line-height: normal;
   letter-spacing: 2px;
+}
+.nav__title a:hover {
+  opacity: 0.7;
 }
 .nav__button {
   background: #30962f;
@@ -120,11 +135,17 @@ table {
   border-radius: 5px;
   font-size: 18px;
 }
+@media only screen and (min-width: 768px) {
+  .nav__wrapper {
+    padding: 20px 30px;
+  }
+}
+
 
 
 /* Hero */
 .hero {
-  background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('./images/mujer-trabajadora-mayor.webp');
+  background-image:  linear-gradient( #31962fde, #31962fde), url('./images/mujer-trabajadora-mayor.webp');
   background-size: cover;
   background-repeat: no-repeat;
   padding: 60px 20px;
@@ -146,6 +167,68 @@ table {
   margin-top: 10px;
   font-weight: 500;
 }
+@media only screen and (min-width: 768px) {
+  .hero {
+    padding: 150px 20px;
+  }
+  .hero__title {
+    font-size: 40px;
+  }
+  .hero__subtitle {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .hero {
+    background-size: contain;
+    background-position: center right;
+    border-bottom-right-radius: 0% 0%;;
+  }
+}
+
+
+
+/* Hero Basic */
+.herobasic {
+  background-image: linear-gradient(blueviolet, rgb(65 39 90 / 90%));
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
+.herobasic > * {
+  color: white;
+  text-shadow: 0 0.1rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+.herobasic__title {
+  font-size: 25px;
+  font-weight: bold;
+}
+.herobasic__subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+@media only screen and (min-width: 768px) {
+  .herobasic {
+    padding: 80px 20px;
+  }
+  .herobasic__title {
+    font-size: 40px;
+  }
+  .herobasic__subtitle {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .herobasic {
+    background-size: contain;
+    background-position: center right;
+  }
+}
+
 
 
 /* Interview */
@@ -175,15 +258,26 @@ table {
   margin-top: 10px;
   font-weight: 400;
 }
-.interview__button {
-  border: none;
-  background: #30962f;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 5px;
+.interview button {
   margin-top: 20px;
-  font-size: 18px;
 }
+@media only screen and (min-width: 768px) {
+  .interview {
+    padding: 50px;
+  }
+  .interview__title {
+    font-size: 25px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .interview::before {
+    left: 10%;
+  }
+  .interview__question {
+    max-width: 700px;
+  }
+}
+
 
 
 /* values */
@@ -223,10 +317,62 @@ table {
   color: #30962f;
   margin-right: 5px;
 }
+@media only screen and (min-width: 768px) {
+  .values {
+    padding: 50px;
+  }
+  .values__title {
+    font-size: 25px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .values::before {
+    left: 10%;
+  }
+}
 
 
 
-/* Sad Quote */
+/* What we do */
+.wedo {
+  padding: 50px 20px 50px 20px;
+  position: relative;
+  background-color: #d5fefd;
+  background-image: linear-gradient(315deg, #d5fefd 0%, #fffcff 74%);
+}
+.wedo__title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.wedo p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.wedo__more {
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .wedo {
+    padding: 50px;
+  }
+  .wedo__title {
+    font-size: 25px;
+    border-left: 5px solid #30962f;
+    padding-left: 10px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .wedo p {
+    max-width: 1000px;
+  }
+}
+
+
+
+
+/* Quotes */
 .quote {
   padding: 50px 20px 50px 20px;
   position: relative;
@@ -262,6 +408,114 @@ table {
 .quote__origin span {
   margin-right: 5px;
 }
+@media only screen and (min-width: 768px) {
+  .quote {
+    padding: 50px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  .quote__title {
+    font-size: 25px;
+    border-left: 5px solid #30962f;
+    padding-left: 10px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .quote blockquote {
+    max-width: 1000px;
+  }
+}
+
+
+
+/* Talents list */
+.talents {
+  padding: 50px 20px 50px 20px;
+}
+.talents__title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.talents__subtitle {
+  color: #333;
+  margin-top: 10px;
+  font-size: 18px;
+}
+.talents__wrapper {
+  padding: 15px;
+}
+.talents__talent {
+  border: 1px solid rgb(231, 225, 225);
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.talents__img {
+  height: 200px;
+}
+.talents__img img {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.talents__content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+.talents__content-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.talents__button {
+  text-align: center;
+  margin: 10px 0;
+}
+.talents a {
+  display: block;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .talents {
+    padding: 50px;
+  }
+  .talents__title {
+    font-size: 25px;
+    border-left: 5px solid #30962f;
+    padding-left: 10px;
+  }
+  .talents__wrapper {
+    padding: 0;
+    margin-top: 20px;
+  }
+  .talents__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  .talents__talent {
+    margin-bottom: 0;
+  }
+  .talents a {
+    margin-top: 20px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .talents__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+  .talents__talent {
+    max-width: 350px;
+  }
+  .talents a {
+    margin-top: 40px;
+    text-decoration: none;
+  }
+  .talents a:hover {
+    color: blueviolet;
+  }
+}
 
 
 /* Disclaimer */
@@ -283,6 +537,18 @@ table {
   padding: 15px;
   border: 1px solid rgb(240, 236, 236);
 }
+@media only screen and (min-width: 768px) {
+  .disclaimer__text {
+    max-width: 600px;
+    margin: 10px auto 0 auto;
+  }
+  .disclaimer__title {
+    text-decoration: none;
+    font-size: 25px;
+  }
+}
+
+
 
 
 /* Footer */
@@ -353,74 +619,26 @@ table {
 .modalnumber input {
   margin-bottom: 5px;
 }
-
-
-/* Talents list */
-.talents {
-  padding: 50px 20px 50px 20px;
+@media only screen and (min-width: 768px) {
+  .modalnumber__container {
+    width: 70%;
+  }
+  .modalnumber__close {
+    right: 80px;
+    top: 20px;
+  }
 }
-.talents__title {
-  font-size: 20px;
-  font-weight: bold;
-}
-.talents__subtitle {
-  color: #333;
-  margin-top: 10px;
-  font-size: 18px;
-}
-.talents__wrapper {
-  padding: 15px;
-}
-.talents__talent {
-  border: 1px solid rgb(231, 225, 225);
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-.talents__img {
-  height: 200px;
-}
-.talents__img img {
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
-}
-.talents__content {
-  padding: 20px;
-}
-.talents__title {
-  font-size: 20px;
-  font-weight: bold;
-}
-.talents__button {
-  text-align: center;
-  margin-top: 20px;
-}
-.talents a {
-  display: block;
-  text-align: center;
+@media only screen and (min-width: 992px) {
+  .modalnumber__container {
+    width: 600px;
+  }
+  .modalnumber__title {
+    font-size: 25px;
+    border-left: 5px solid #30962f;
+    padding-left: 10px;
+  }
 }
 
-
-/* What we do */
-.wedo {
-  padding: 50px 20px 50px 20px;
-  position: relative;
-  background-color: #d5fefd;
-  background-image: linear-gradient(315deg, #d5fefd 0%, #fffcff 74%);
-}
-.wedo__title {
-  font-size: 20px;
-  font-weight: bold;
-}
-.wedo p {
-  margin-top: 10px;
-  font-size: 18px;
-}
-.wedo__more {
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 20px;
-}
 
 
 /* Cookie consent */
