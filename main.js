@@ -58,6 +58,10 @@ modalButtonSend.onclick = function () {
     
     emailjs.send('service_ux2g4f5', 'template_k2sslj6', templateParams)
     .then(function(response) {
+
+      gtag('event', 'SolicitudContacto', {
+        'event_category' : 'Interaccion'
+      });
       
       modalPhoneNumber.value = '';
       modalPhoneName.value = '';
