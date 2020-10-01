@@ -651,6 +651,7 @@ body {
   color: white;
   text-align: center;
   display: flex;
+  justify-content: space-between;
   padding: 10px;
   align-items: center;
   z-index: 999999;
@@ -667,4 +668,18 @@ body {
   font-size: 14px;
   font-weight: bold;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+@media only screen and (min-width: 992px) {
+  .cookie {
+    max-width: 1200px;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .cookie__content {
+    font-size: 16px;
+  }
+  .cookie__button button {
+    font-size: 16px;
+  }
 }
